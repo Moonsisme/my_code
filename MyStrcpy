@@ -1,0 +1,22 @@
+#include <iostream>
+#include <assert.h>
+
+using namespace std;
+
+char* Mystrcpy(char* dest, const char* src)//src加const保护
+{
+	assert((dest != NULL) && (src != NULL));//assert断言，保证dest,src不为空
+	char* address = dest;                 //记录dest的起始位置作为返回值
+	while ((*dest++=*src++)!='\0')        //把src中的字符一个一个的复制给dest(包括src中的'\0')，当*src==‘\0’时，停止;
+	{
+		;
+	}
+	return address;                       //返回char*的指针
+}
+int main()
+{
+	
+	char s2[20];
+	cout << "ret=" << Mystrcpy(s2, "abcdefghi") << endl;
+	return 0;
+}
