@@ -15,7 +15,6 @@ char* Mystrcpy(char* dest, const char* src)//src加const保护
 }
 int main()
 {
-	
 	char s2[20];
 	cout << "ret=" << Mystrcpy(s2, "abcdefghi") << endl;
 	return 0;
