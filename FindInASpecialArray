@@ -1,0 +1,47 @@
+#include <iostream>
+#include <assert.h>
+
+bool FindANumber(int* arr,int rows,int clomns,int x)
+{
+	assert(arr && (rows > 0) && (clomns > 0));
+	int r = 0;
+	int c = clomns-1;
+
+	for (c = clomns - 1; c >=0; c--)
+	{
+		for (r=0; r <rows; r++)
+		{
+			if (arr[r*clomns + c]>x)
+			{
+				break;
+			}
+			else if (arr[r*clomns + c]==x)
+			{
+				return true;
+			}
+				
+		}
+	}
+	return false;
+}
+
+int main()
+{
+	int arr[][4] =
+	{ 1, 2, 8, 9,
+	  2, 4, 9, 12,
+	  4, 7, 10, 13,
+	  6, 8, 11, 15
+	};
+	int **arr1 = NULL;
+
+	//bool ret=FindANumber((int*)arr,4,4,100);
+	//bool ret=FindANumber((int*)arr,4,4,3);
+	//bool ret=FindANumber((int*)arr,4,4,-1);
+
+
+	bool ret1 = FindANumber((int*)arr1, 4, 1, 3);
+
+
+	return 0;
+}
